@@ -1,59 +1,63 @@
-## Bandit Level 0
+## Bandit Level 0 -> 1
 * ssh
 
+Username: bandit0
+Password: bandit0
+
 ```
-$ ssh bandit0@bandit.labs.overthewire.org -p 2220
-=> bandit0@bandit.labs.overthewire.org's password:
-bandit0
+cat readme
 ```
 
-## Bandit Level 1
+Username: bandit1
+Password: boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+
+## Bandit Level 1 -> 2
 * dashed filename
 
 ```
-$ ssh bandit10@bandit.labs.overthewire.org -p 2220
-=> bandit1@bandit.labs.overthewire.org's password:
-boJ9jbbUNNfktd78OOpsqOltutMc3MY1
-
+$ ls
+-
 $ cat ./-
 ```
+Username: bandit2
+Password: CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
 
-Bandit Level 2
+## Bandit Level 2 -> 3
 * spaces in filename
+
 ```
-$ ssh bandit20@bandit.labs.overthewire.org -p 2220
-=> bandit2@bandit.labs.overthewire.org's password:
-CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+$ cat spaces\ in\ this\ filename 
 
 $ vim "./spaces in this filename"
 ```
+Username: bandit3
+Password: UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 
-Bandit Level 3
+## Bandit Level 3 -> 4
 * hidden file
 ```
-$ ssh bandit30@bandit.labs.overthewire.org -p 2220
-=> bandit3@bandit.labs.overthewire.org's password:
-UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
-
 $ bandit3@bandit:~$ ls
 $ cd inhere/
 $ ls -al
 $ cat .hidden
 ```
+Username: bandit4
+Password: pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 
-Bandit Level 4
+## Bandit Level 4 -> 5
 * identify file types
 ```
-$ ssh bandit40@bandit.labs.overthewire.org -p 2220
-=> bandit4@bandit.labs.overthewire.org's password:
-$ pIwrPrtPN36QITSp3EQaw936yaFoFgAB
-
+# wildcard
 $ file inhere/*
-$ cd inhere
-$ cat ./-file07
+
+# loop shell script
+$ for x in {0..9}; do file -i ./inhere/-file0$x; done
 ```
 
-Bandit Level 5
+Username: bandit5
+Password: koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+
+## Bandit Level 5 -> 6
 * search for files that matched the exact size
 * 1033 byte
 * find
@@ -71,3 +75,6 @@ $ cat ./inhere/maybehere07/.file2
   * k —— kilo
   * M —— mega
   * G —— giga
+
+Username: bandit6
+Password: DXjZPULLxYr17uwoI01bNLQbtFemEgo7
